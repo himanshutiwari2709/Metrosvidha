@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<meta http-equiv="refresh" content="60" />
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Metro Suvidha</title>
+	  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+      <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+      <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Repl.it_logo.svg/220px-Repl.it_logo.png">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/myscript/4.3.0/myscript.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="script.js"></script>
+  </head>
+    <body>
+	  
+        <div class="container">
+	  
+		<!--────────────────Header───────────────-->
+	<header>
+		<a class="logo" href="#home">
+              <img src="static/logo.png" alt="repl logo" />
+		</a>
+		<nav>	
+		 <ul class="nav-bar"><div class="bg"></div>
+			<li><a class="nav-link active" href="#home">Home</a></li>
+			<li><a class="nav-link" href="#projects">Seat Availablity</a></li>
+			<li><a class="nav-link" href="#contact">Contact</a></li>
+		 </ul>
+			
+			<div class="hamburger">
+				<div class="line1"></div>
+            <div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<!--─────────────────Home────────────────-->
+	  <div id="home">
+		 <div class="filter"></div>
+		 <section class="intro">
+		  <h3>Metro Suvidha<hr></h3>
+		  <p>Get details</p>
+		  <p>of seat availability and occupancy in the upcoming metro.</p>
+          <p></p>
+      
+	  </div>  
+		
+	  <!--───────────────Projects───────────────-->
+	  <div id="projects"> 
+		 <h3>Next Station : IIT Madras<hr></h3>
+		  <p><h1>Coach occupancy:</h1></p>
+		  <div class="work-box">
+		  <div class="work">
+
+			
+		<!--───────────────card───────────────-->
+			  <table id = "tb1" border = "1">
+            <tr>
+                <th>Coach Number</th>
+                <th>Number of seats available in Coach</th>
+            </tr>
+        </table>
+        <script>
+            fetch("static/mydata.json")
+                .then(response => response.json())
+                .then(data => {
+                    for (var i = 0; i<data.items.length; i++){
+                        let coachID = data.items[i].CoachNumber;
+                        let peopleCount = data.items[i].Countofpeople;
+                        if(peopleCount>=50){
+                          peopleCount = 0
+                        }
+                        else{
+                          peoplecount = 50 - peopleCount
+                        }
+                        document.querySelector("#tb1").innerHTML += `
+                          <tr>
+                                    <td>${coachID}</td>
+                                    <td>${peopleCount}</td>
+                                </tr>`;
+                    }
+                })
+        </script>
+
+  
+</div>
+
+		  </div>
+	  </div>
+	  <div class="col-lg-4  offset-lg-1">
+		<img src="{{ url_for('video_feed') }}" width="70%" align="center">
+	</div>
+		<!--──────────────Contact────────────────-->
+
+
+	</main>
+
+	  
+  </div>
+
+  </body>
+</html>

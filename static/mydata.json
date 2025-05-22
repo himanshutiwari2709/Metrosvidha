@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "CoachNumber": "C1",
+            "Countofpeople": "50"
+        },
+        {
+            "CoachNumber": "C2",
+            "Countofpeople": "30"
+        },
+       {
+            "CoachNumber": "C3",
+            "Countofpeople": "20"
+        },
+       {
+            "CoachNumber": "C4",
+            "Countofpeople": "60"
+        },
+       {
+            "CoachNumber": "C5",
+            "Countofpeople": "45"
+        },
+       {
+            "CoachNumber": "C6",
+            "Countofpeople": "35"
+        }
+    ]
+}

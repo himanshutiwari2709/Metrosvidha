@@ -23,10 +23,9 @@ AI Vision will allow us to find the number of people inside the metro.
 - HTML, CSS, Python for web designing and data maniputaion
 
 ### Contributors
-- Sawan Singh
-- Atharva Chaturvedi
-- Abhinav Kumar
-- Nitesh Kumar
+- Himanshu Tiwari
+- Sawan Singh 
+- Krishan Sharma
 
 Built by Team CODE BRIGADE<br>
 5th Technovation Hackathon<br>
